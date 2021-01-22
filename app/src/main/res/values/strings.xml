@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Quotes Love</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="no_connectivity_error">No Connectivity. Please check your Internet connection and try again.</string>
+    <string name="no_connectivity_server_error">Server encountered an unexpected error or the site is under maintenance. Please try again later</string>
+    <string name="detail_error_code_999">Unexpected error.</string>
+
+    <string name="interstitial_ad_sample">Interstitial Ad Sample</string>
+    <string name="start_level">Level 1</string>
+    <string name="next_level">Next Level</string>
+    <!-- -
+        This is an ad unit ID for an interstitial test ad. Replace with your own interstitial ad unit id.
+        For more information, see https://support.google.com/admob/answer/3052638
+    <!- -->
+    <string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
+
+    <string name="title_home">Thính Độc</string>
+    <string name="thinh">Thịt mỡ dưa hành câu đối đó \nEm đây bé nhỏ chẳng ai yêu</string>
+</resources>

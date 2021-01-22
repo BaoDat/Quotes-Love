@@ -1,0 +1,2 @@
+include ':domain', ':app'
+rootProject.name = "Quotes Love"

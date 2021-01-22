@@ -1,0 +1,61 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext {
+        kotlinVersion = '1.4.21'
+        gradlePluginVersion = '4.1.1'
+    }
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$gradlePluginVersion"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+
+ext {
+    minSdkVersion = 16
+    targetSdkVersion = 29
+    compileSdkVersion = targetSdkVersion
+    buildToolsVersion = "29.0.3"
+}
+
+tasks.register("projectCodestyle").configure {
+    group = "project"
+    description = "Runs codestyle check for all modules"
+}
+
+tasks.register("projectLint").configure {
+    group = "project"
+    description = "Runs AndroidLint for all modules"
+}
+
+tasks.register("projectCheck").configure {
+    group = "project"
+    description = "Runs all checks for all modules"
+    dependsOn "projectCodestyle"
+    dependsOn "projectLint"
+}
+
+apply from: 'scripts/dependencies.gradle'
+apply from: 'scripts/modules-configuration.gradle'

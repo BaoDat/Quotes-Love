@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ad_mob_app_id" translatable="false">ca-app-pub-2292272048512920~7998378867</string>
+
+    //id test AdMob
+    <string name="banner_ads_home_footer_test" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="interstitial_ads_test" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
+
+    //id AdMob
+    <string name="banner_ads" translatable="false">ca-app-pub-2292272048512920/1356318314</string>
+    <string name="interstitial_ads" translatable="false">ca-app-pub-2292272048512920/8117445391</string>
+
+</resources>

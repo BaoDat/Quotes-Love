@@ -1,0 +1,124 @@
+ext {
+    def appCompat = '1.2.0'
+    def lifecycleVersion = "2.2.0"
+    def daggerVersion = "2.27"
+    def roomVersion = "2.2.5"
+
+    def projectModules = [
+            app   : project("app"),
+            domain: project("domain"),
+    ]
+
+    def libs = [
+            appCompat            : "androidx.appcompat:appcompat:$appCompat",
+            constraintLayout     : 'androidx.constraintlayout:constraintlayout:2.0.1',
+            cardView             : 'androidx.cardview:cardview:1.0.0',
+
+            recyclerView         : "androidx.recyclerview:recyclerview:1.1.0",
+            archExtensions       : "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion",
+            archViewModels       : "androidx.lifecycle:lifecycle-viewmodel:$lifecycleVersion",
+            archLiveData         : "androidx.lifecycle:lifecycle-livedata:$lifecycleVersion",
+
+            kotlinStdLib         : "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
+            kotlinStdLibJdk7     : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
+            kotlinExt            : "androidx.core:core-ktx:1.0.0",
+
+            rxAndroid            : "io.reactivex.rxjava2:rxandroid:2.1.1",
+            rxJava               : "io.reactivex.rxjava2:rxjava:2.2.8",
+
+            // Dependence Injection
+            dagger               : "com.google.dagger:dagger:$daggerVersion",
+            daggerAndroid        : "com.google.dagger:dagger-android:$daggerVersion",
+            daggerSupport        : "com.google.dagger:dagger-android-support:$daggerVersion",
+            daggerCompiler       : "com.google.dagger:dagger-compiler:$daggerVersion",
+            daggerAndroidCompiler: "com.google.dagger:dagger-android-processor:$daggerVersion",
+            javaxInject          : "javax.inject:javax.inject:1",
+
+            // Show notification
+            crouton              : "de.keyboardsurfer.android.widget:crouton:1.8.5@aar",
+
+            // Converting JSON string to an equivalent Java/Kotlin object
+            gson                 : "com.google.code.gson:gson:2.8.6",
+
+            // Room Persistence Library
+            roomDatabase         : "androidx.room:room-runtime:$roomVersion",
+            roomCompiler         : "androidx.room:room-compiler:$roomVersion",
+            roomRxJava           : "androidx.room:room-rxjava2:$roomVersion",
+
+            // optional - Kotlin Extensions and Coroutines support for Room
+            roomKtx              : "androidx.room:room-ktx:2.2.5",
+
+            junit                : "junit:junit:4.12",
+
+            espressoCore         : "androidx.test.espresso:espresso-core:3.2.0",
+
+            // Google AdMob
+            googleAd             : "com.google.android.gms:play-services-ads:19.1.0",
+
+            //Snow Falling
+            snowFalling          : 'com.github.IamStY:SnowFalling:v1.4'
+    ]
+
+    appModuleDependencies = [
+            [configuration: "implementation", dependency: projectModules.domain],
+
+            [configuration: "implementation", dependency: libs.kotlinStdLib],
+            [configuration: "implementation", dependency: libs.kotlinStdLibJdk7],
+
+            [configuration: "implementation", dependency: libs.appCompat],
+            [configuration: "implementation", dependency: libs.constraintLayout],
+            [configuration: "implementation", dependency: libs.cardView],
+
+            [configuration: "implementation", dependency: libs.recyclerView],
+            [configuration: "implementation", dependency: libs.archExtensions],
+            [configuration: "implementation", dependency: libs.archViewModels],
+            [configuration: "implementation", dependency: libs.archLiveData],
+
+            [configuration: "implementation", dependency: libs.kotlinStdLib],
+            [configuration: "implementation", dependency: libs.kotlinStdLibJdk7],
+            [configuration: "implementation", dependency: libs.kotlinExt],
+
+            [configuration: "implementation", dependency: libs.rxJava],
+            [configuration: "implementation", dependency: libs.rxAndroid],
+            [configuration: "implementation", dependency: libs.gson],
+
+            [configuration: "implementation", dependency: libs.dagger],
+            [configuration: "implementation", dependency: libs.daggerAndroid],
+            [configuration: "implementation", dependency: libs.daggerSupport],
+            [configuration: "kapt", dependency: libs.daggerCompiler],
+            [configuration: "kapt", dependency: libs.daggerAndroidCompiler],
+
+            [configuration: "implementation", dependency: libs.crouton, options: {
+                exclude group: 'com.google.android', module: 'support-v4'
+            }],
+
+            [configuration: "implementation", dependency: libs.roomDatabase],
+            [configuration: "kapt", dependency: libs.roomCompiler],
+            [configuration: "implementation", dependency: libs.roomRxJava],
+
+            [configuration: "implementation", dependency: libs.roomKtx],
+
+            [configuration: "testImplementation", dependency: libs.junit],
+            [configuration: "androidTestImplementation", dependency: libs.junit],
+            [configuration: "androidTestImplementation", dependency: libs.espressoCore],
+
+            [configuration: "implementation", dependency: libs.googleAd],
+
+            [configuration: "implementation", dependency: libs.snowFalling],
+    ]
+
+    domainModuleDependencies = [
+            [configuration: "implementation", dependency: libs.javaxInject],
+            [configuration: "implementation", dependency: libs.rxJava],
+            [configuration: "implementation", dependency: libs.kotlinStdLib],
+    ]
+
+}
+
+allprojects {
+    configurations.all {
+        resolutionStrategy {
+            force "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlinVersion"
+        }
+    }
+}

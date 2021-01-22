@@ -1,0 +1,80 @@
+ext.configureDependencies = { project ->
+    project.dependencies {
+        rootProject."${project.name}ModuleDependencies".each {
+            add(it.configuration, it.dependency, it.options)
+        }
+    }
+}
+
+ext.configureAndroidApplication = { project ->
+    project.apply plugin: 'com.android.application'
+    project.apply plugin: 'kotlin-android-extensions'
+
+    configureAndroidModule(project)
+    rootProject.tasks.named("projectCodestyle").configure {
+        dependsOn "${project.path}:detekt"
+        dependsOn "${project.path}:lintKotlin"
+    }
+    rootProject.tasks.named("projectLint").configure {
+        dependsOn "${project.path}:lintFullDebug"
+    }
+}
+
+ext.configureAndroidLibrary = { project ->
+    project.apply plugin: "com.android.library"
+
+    configureAndroidModule(project)
+
+    // Android library modules should use DI if they need to introduce flavor-specific code or configuration
+    project.android {
+        variantFilter {
+            it.ignore = it.name != "debug"
+        }
+
+        libraryVariants.all {
+            it.generateBuildConfigProvider.configure { enabled = false }
+        }
+    }
+    rootProject.tasks.named("projectCodestyle").configure {
+        dependsOn "${project.path}:detekt"
+        dependsOn "${project.path}:lintKotlin"
+    }
+    rootProject.tasks.named("projectLint").configure {
+        dependsOn "${project.path}:lintDebug"
+    }
+}
+
+ext.configureKotlinModule = { project ->
+    project.apply plugin: 'kotlin'
+    project.apply plugin: 'kotlin-kapt'
+
+    project.sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+    }
+
+    rootProject.tasks.named("projectCodestyle").configure {
+        dependsOn "${project.path}:detekt"
+        dependsOn "${project.path}:lintKotlin"
+    }
+}
+
+def configureAndroidModule(project) {
+    project.apply plugin: 'kotlin-android'
+    project.apply plugin: 'kotlin-kapt'
+
+    project.android {
+        compileSdkVersion rootProject.ext.compileSdkVersion
+
+        defaultConfig {
+            minSdkVersion rootProject.ext.minSdkVersion
+            targetSdkVersion rootProject.ext.targetSdkVersion
+        }
+
+        sourceSets {
+            main.java.srcDirs += 'src/main/kotlin'
+            test.java.srcDirs += 'src/test/kotlin'
+            androidTest.java.srcDirs += 'src/androidTest/kotlin'
+        }
+    }
+}

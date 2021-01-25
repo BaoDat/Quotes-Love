@@ -3,6 +3,7 @@ package com.mrtdev.quoteslove.di.module
 import android.content.Context
 import com.mrtdev.quoteslove.QuotesLoveApplication
 import com.mrtdev.quoteslove.di.ActivityScope
+import com.mrtdev.quoteslove.ui.main.di.MainInjectors
 import com.mrtdev.quoteslove.ui.main.di.MainModule
 import com.mrtdev.quoteslove.ui.main.view.MainActivity
 import com.mrtdev.quoteslove.ui.splash.SplashScreenActivity
@@ -18,12 +19,12 @@ abstract class AppInjectorsModule {
     @Binds
     abstract fun context(app: QuotesLoveApplication): Context
 
-//    @ActivityScope
+    @ActivityScope
     @ContributesAndroidInjector(modules = [SplashScreenModule::class])
     abstract fun splash(): SplashScreenActivity
-//
+
     @ActivityScope
-    @ContributesAndroidInjector(modules = [MainModule::class])
+    @ContributesAndroidInjector(modules = [MainModule::class, MainInjectors::class])
     abstract fun main(): MainActivity
 
 }

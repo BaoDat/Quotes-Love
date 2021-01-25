@@ -3,6 +3,8 @@ ext {
     def lifecycleVersion = "2.2.0"
     def daggerVersion = "2.27"
     def roomVersion = "2.2.5"
+    def navigationVersion = "2.3.2"
+    def parcelerVersion = '1.1.12'
 
     def projectModules = [
             app   : project("app"),
@@ -13,6 +15,9 @@ ext {
             appCompat            : "androidx.appcompat:appcompat:$appCompat",
             constraintLayout     : 'androidx.constraintlayout:constraintlayout:2.0.1',
             cardView             : 'androidx.cardview:cardview:1.0.0',
+            design               : "com.google.android.material:material:1.3.0-rc01",
+            navigationFragment   : "androidx.navigation:navigation-fragment-ktx:$navigationVersion",
+            navigationUi         : "androidx.navigation:navigation-ui-ktx:$navigationVersion",
 
             recyclerView         : "androidx.recyclerview:recyclerview:1.1.0",
             archExtensions       : "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion",
@@ -56,7 +61,10 @@ ext {
             googleAd             : "com.google.android.gms:play-services-ads:19.1.0",
 
             //Snow Falling
-            snowFalling          : 'com.github.IamStY:SnowFalling:v1.4'
+            snowFalling          : 'com.github.IamStY:SnowFalling:v1.4',
+
+            parceler             : "org.parceler:parceler:$parcelerVersion",
+            parcelerApi          : "org.parceler:parceler-api:$parcelerVersion",
     ]
 
     appModuleDependencies = [
@@ -68,6 +76,9 @@ ext {
             [configuration: "implementation", dependency: libs.appCompat],
             [configuration: "implementation", dependency: libs.constraintLayout],
             [configuration: "implementation", dependency: libs.cardView],
+            [configuration: "implementation", dependency: libs.design],
+            [configuration: "implementation", dependency: libs.navigationFragment],
+            [configuration: "implementation", dependency: libs.navigationUi],
 
             [configuration: "implementation", dependency: libs.recyclerView],
             [configuration: "implementation", dependency: libs.archExtensions],
@@ -105,6 +116,9 @@ ext {
             [configuration: "implementation", dependency: libs.googleAd],
 
             [configuration: "implementation", dependency: libs.snowFalling],
+
+            [configuration: "kapt", dependency: libs.parceler],
+            [configuration: "implementation", dependency: libs.parcelerApi],
     ]
 
     domainModuleDependencies = [

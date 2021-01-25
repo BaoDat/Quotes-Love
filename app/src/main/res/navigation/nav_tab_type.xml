@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_tab_type"
+    app:startDestination="@+id/action_type">
+
+    <fragment
+        android:id="@+id/action_type"
+        android:name="com.mrtdev.quoteslove.ui.typequotes.view.TypeQuotesFragment"
+        android:label="TypeQuotesFragment" />
+</navigation>

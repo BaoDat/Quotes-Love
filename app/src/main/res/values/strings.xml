@@ -17,4 +17,11 @@
 
     <string name="title_home">Thính Độc</string>
     <string name="thinh">Thịt mỡ dưa hành câu đối đó \nEm đây bé nhỏ chẳng ai yêu</string>
+
+    <!-- Bottom Tab-->
+    <string name="tab_item_all">All</string>
+    <string name="tab_item_type">Type</string>
+    <string name="tab_item_home">Home</string>
+    <string name="tab_item_love">Love</string>
+    <string name="tab_item_info">Info</string>
 </resources>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#F2BDD0</color>
-    <color name="colorPrimaryDark">#D53A47</color>
+    <color name="app_color_pink">#F2BDD0</color>
+    <color name="app_color_heart">#D34E59</color>
     <color name="colorAccent">#D53A47</color>
     <color name="background">#2B292B</color>
     <color name="background800">#424242</color>
@@ -10,12 +10,11 @@
     <color name="dark">#040706</color>
     <color name="dragon">#378A94</color>
     <color name="white_12">#fafafa</color>
-    <color name="white_56">#8effffff</color>
+    <color name="gray">#E68C8A8A</color>
     <color name="white_70">#b2ffffff</color>
     <color name="white_87">#ddffffff</color>
     <color name="white_93">#edf8f8f8</color>
     <color name="white">#ffffff</color>
-    <color name="gray_21">#B1A5A5</color>
     <color name="electric">#E0E64B</color>
     <color name="fairy">#9E1A44</color>
     <color name="black">#000000</color>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_tab_like"
-    app:startDestination="@+id/action_like">
+    android:id="@+id/nav_tab_info"
+    app:startDestination="@+id/action_info">
 
     <fragment
-        android:id="@+id/action_like"
-        android:name="com.mrtdev.quoteslove.ui.love.view.LoveFragment"
+        android:id="@+id/action_info"
+        android:name="com.mrtdev.quoteslove.ui.info.view.InfoFragment"
         android:label="AllQuotesFragment" />
 </navigation>

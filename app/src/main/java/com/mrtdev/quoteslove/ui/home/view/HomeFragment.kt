@@ -29,9 +29,6 @@ class HomeFragment : BaseFragment<FragmentAllQuotesBinding, HomeViewModel>() {
 
     override fun onResume() {
         super.onResume()
-        (activity as BaseActivity).apply {
-            (activity as? BaseActivity)?.supportActionBar?.show()
-        }
-        setActionBarTitle("Thính thống trị")
+        setupToolBar(R.string.action_tile_home)
     }
 }

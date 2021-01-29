@@ -2,7 +2,6 @@ package com.mrtdev.quoteslove.ui.typequotes.view
 
 import android.os.Bundle
 import com.mrtdev.quoteslove.R
-import com.mrtdev.quoteslove.base.BaseActivity
 import com.mrtdev.quoteslove.base.BaseFragment
 import com.mrtdev.quoteslove.databinding.FragmentTypeQuotesBinding
 import com.mrtdev.quoteslove.ui.typequotes.viewmodel.TypeQuotesViewModel
@@ -28,9 +27,6 @@ class TypeQuotesFragment : BaseFragment<FragmentTypeQuotesBinding, TypeQuotesVie
 
     override fun onResume() {
         super.onResume()
-        (activity as BaseActivity).apply {
-            (activity as? BaseActivity)?.supportActionBar?.show()
-        }
-        setActionBarTitle("Tác Giả Và Thể Loại")
+        setupToolBar(R.string.action_tile_type_quote)
     }
 }

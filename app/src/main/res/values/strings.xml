@@ -24,4 +24,13 @@
     <string name="tab_item_home">Home</string>
     <string name="tab_item_love">Love</string>
     <string name="tab_item_info">Info</string>
+
+    <!-- Action Title-->
+    <string name="action_tile_all_quotes">Tất cả thính</string>
+    <string name="action_tile_home">Thính thống trị</string>
+    <string name="action_tile_info">Chúng mình nè!</string>
+    <string name="action_tile_type_quote">Tác giả và thể loại</string>
+
+    <string name="description_splash_screen">Độc dược tình yêu</string>
+
 </resources>

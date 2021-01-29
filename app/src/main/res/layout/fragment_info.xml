@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
 
         <variable
             name="model"
-            type="com.mrtdev.quoteslove.ui.home.viewmodel.HomeViewModel" />
+            type="com.mrtdev.quoteslove.ui.info.viewmodel.InfoViewModel" />
     </data>
 
     <LinearLayout
@@ -22,11 +21,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="HOME"
+                android:text="INFO QUOTES"
                 android:textSize="30sp" />
         </LinearLayout>
     </LinearLayout>

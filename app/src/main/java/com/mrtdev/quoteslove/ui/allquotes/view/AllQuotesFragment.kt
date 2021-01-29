@@ -28,9 +28,6 @@ class AllQuotesFragment : BaseFragment<FragmentAllQuotesBinding, AllQuotesViewMo
 
     override fun onResume() {
         super.onResume()
-        (activity as BaseActivity).apply {
-            (activity as? BaseActivity)?.supportActionBar?.show()
-        }
-        setActionBarTitle("Tất cả thính")
+        setupToolBar(R.string.action_tile_all_quotes)
     }
 }

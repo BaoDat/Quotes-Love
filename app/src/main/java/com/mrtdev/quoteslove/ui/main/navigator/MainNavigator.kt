@@ -9,7 +9,8 @@ interface MainNavigator {
         ALL,
         TYPE,
         HOME,
-        LIKE
+        LIKE,
+        INFO
     }
     fun navigate(event: Event)
 

@@ -24,6 +24,5 @@ class SplashScreenActivity : BaseBindingActivity<SplashScreenLayoutBinding, Spla
     override fun initView(savedInstanceState: Bundle?) {
         toggleFullScreen(this)
         viewModel.initializeView()
-
     }
 }

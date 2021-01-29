@@ -20,8 +20,7 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-1691478686601999~1177880686"/>
         <activity
-            android:name=".ui.main.view.MainActivity"
-            android:label="@string/app_name"
+            android:name=".ui.splash.SplashScreenActivity"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,6 +28,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.main.view.MainActivity"/>
 <!--        <activity android:name=".ui.main.view.MainActivity"/>-->
         <!-- Include the AdActivity configChanges and theme. -->
         <activity

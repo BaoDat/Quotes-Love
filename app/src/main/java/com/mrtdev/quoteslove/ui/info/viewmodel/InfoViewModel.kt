@@ -1,9 +1,9 @@
-package com.mrtdev.quoteslove.ui.likequotes.viewmodel
+package com.mrtdev.quoteslove.ui.info.viewmodel
 
 import com.mrtdev.quoteslove.base.BaseViewModel
 import javax.inject.Inject
 
-class LikeQuotesViewModel @Inject constructor(
+class InfoViewModel @Inject constructor(
 ) : BaseViewModel() {
 
 }

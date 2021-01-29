@@ -4,8 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Parcelable
-import androidx.navigation.NavController
-import androidx.navigation.ui.NavigationUI
 import com.mrtdev.quoteslove.ui.main.navigator.MainNavigator
 import com.mrtdev.quoteslove.ui.main.viewmodel.MainViewModel
 import com.mrtdev.quoteslove.R
@@ -56,19 +54,6 @@ class MainActivity : BaseBindingActivity<ActivityMainBinding, MainViewModel>(), 
         }
     }
 
-    override fun onResume() {
-//        setViewForScreen()
-        supportActionBar?.show()
-        setActionBarTitle(resources.getString(R.string.title_home))
-        super.onResume()
-    }
-
-    private val listener = NavController.OnDestinationChangedListener { controller, _, _ ->
-        run {
-            NavigationUI.setupActionBarWithNavController(this, controller)
-        }
-    }
-
     private fun showTabItem(item: MainNavigator.TabItem) {
         when (item) {
             MainNavigator.TabItem.ALL -> {
@@ -81,7 +66,11 @@ class MainActivity : BaseBindingActivity<ActivityMainBinding, MainViewModel>(), 
                 bottomNavController.onNavigationItemSelected(R.id.action_home)
             }
             MainNavigator.TabItem.LIKE -> {
+                supportActionBar?.hide()
                 bottomNavController.onNavigationItemSelected(R.id.action_like)
+            }
+            MainNavigator.TabItem.INFO -> {
+                bottomNavController.onNavigationItemSelected(R.id.action_info)
             }
         }
     }
@@ -92,6 +81,7 @@ class MainActivity : BaseBindingActivity<ActivityMainBinding, MainViewModel>(), 
             R.id.action_type -> R.navigation.nav_tab_type
             R.id.action_home -> R.navigation.nav_tab_home
             R.id.action_like -> R.navigation.nav_tab_like
+            R.id.action_info -> R.navigation.nav_tab_info
             else -> R.navigation.nav_tab_home
         }
     }

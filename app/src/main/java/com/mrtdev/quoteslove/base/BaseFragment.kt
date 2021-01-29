@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.StringRes
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
@@ -90,12 +91,19 @@ abstract class BaseFragment<TBinding : ViewDataBinding, TViewModel : ViewModel> 
         }
     }
 
-    fun setActionBarTitle(@StringRes resId: Int) {
+    private fun setActionBarTitle(@StringRes resId: Int) {
         setActionBarTitle(getString(resId))
     }
 
-    fun setActionBarTitle(title: String) {
+    private fun setActionBarTitle(title: String) {
         (activity as BaseActivity).setActionBarTitle(title)
+    }
+
+    fun setupToolBar(@StringRes resId: Int){
+        (activity as? AppCompatActivity)?.run {
+            supportActionBar?.show()
+            setActionBarTitle(resId)
+        }
     }
 
     /**

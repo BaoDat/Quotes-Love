@@ -5,7 +5,7 @@
     <data>
         <variable
             name="model"
-            type="com.mrtdev.quoteslove.ui.likequotes.viewmodel.LikeQuotesViewModel" />
+            type="com.mrtdev.quoteslove.ui.love.viewmodel.ListViewModel" />
     </data>
 
     <LinearLayout
@@ -18,6 +18,6 @@
           android:layout_height="wrap_content"
           android:gravity="center"
           android:textSize="30sp"
-          android:text="Like Quotes"/>
+          android:text="Danh Sách"/>
     </LinearLayout>
 </layout>

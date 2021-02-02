@@ -1,6 +1,7 @@
 package com.mrtdev.quoteslove.di.component
 
 import com.mrtdev.quoteslove.QuotesLoveApplication
+import com.mrtdev.quoteslove.database.di.DatabaseModule
 import com.mrtdev.quoteslove.di.module.AppInjectorsModule
 import com.mrtdev.quoteslove.di.module.ViewModelsModule
 import dagger.Component
@@ -15,7 +16,8 @@ import javax.inject.Singleton
     modules = [
         ViewModelsModule::class,
         AndroidSupportInjectionModule::class,
-        AppInjectorsModule::class
+        AppInjectorsModule::class,
+        DatabaseModule::class
     ]
 )
 

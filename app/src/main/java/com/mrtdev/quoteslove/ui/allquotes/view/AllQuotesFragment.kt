@@ -2,9 +2,9 @@ package com.mrtdev.quoteslove.ui.allquotes.view
 
 import android.os.Bundle
 import com.mrtdev.quoteslove.R
-import com.mrtdev.quoteslove.base.BaseActivity
 import com.mrtdev.quoteslove.base.BaseFragment
 import com.mrtdev.quoteslove.databinding.FragmentAllQuotesBinding
+import com.mrtdev.quoteslove.ui.allquotes.view.adapter.QuotesAdapter
 import com.mrtdev.quoteslove.ui.allquotes.viewmodel.AllQuotesViewModel
 
 class AllQuotesFragment : BaseFragment<FragmentAllQuotesBinding, AllQuotesViewModel>() {
@@ -23,7 +23,14 @@ class AllQuotesFragment : BaseFragment<FragmentAllQuotesBinding, AllQuotesViewMo
     }
 
     override fun initView(savedInstanceState: Bundle?) {
-
+        binding.rvQuotes.adapter =
+            context?.let {
+                QuotesAdapter(
+                    it,
+                    this@AllQuotesFragment,
+                    viewModel.quotes
+                )
+            }
     }
 
     override fun onResume() {

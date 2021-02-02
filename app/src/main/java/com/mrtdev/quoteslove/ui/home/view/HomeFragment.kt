@@ -20,11 +20,10 @@ class HomeFragment : BaseFragment<FragmentAllQuotesBinding, HomeViewModel>() {
     override val viewModelClass = HomeViewModel::class
 
     override fun init(savedInstanceState: Bundle?) {
-
     }
 
     override fun initView(savedInstanceState: Bundle?) {
-
+        viewModel.saveScore()
     }
 
     override fun onResume() {

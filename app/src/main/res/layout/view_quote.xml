@@ -67,7 +67,7 @@
 
                 <TextView
                     android:id="@+id/tv_thinh"
-                    android:layout_width="250dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="@{model.description}"
@@ -78,7 +78,7 @@
                     app:layout_constraintEnd_toEndOf="@id/iv_second"
                     app:layout_constraintStart_toStartOf="@id/iv_second"
                     app:layout_constraintTop_toBottomOf="@id/iv_second"
-                    tools:text="@string/thinh" />
+                    tools:text="Gửi thương gửi cả ngẩn ngơ trong lòng" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>

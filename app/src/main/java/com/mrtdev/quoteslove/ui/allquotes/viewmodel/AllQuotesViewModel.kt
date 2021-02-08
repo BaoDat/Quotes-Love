@@ -27,15 +27,5 @@ class AllQuotesViewModel @Inject constructor(
             .subscribe {
                 quotes.value = it
             }
-
-        compositeDisposable += jSoup.getJsonData<Quote>(context, values.value!!).subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(
-                {
-                },
-                {
-
-                }
-            )
     }
 }

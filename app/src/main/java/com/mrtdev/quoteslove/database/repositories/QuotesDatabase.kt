@@ -21,6 +21,7 @@ class DatabaseQuotesDatabase @Inject constructor(
     override val getAll: Observable<List<Quote>> = Observable.fromCallable {
         database.quotesDao().getQuotes().map { quotesDto ->
             Quote(
+                id = quotesDto.id,
                 type = quotesDto.type,
                 description = quotesDto.description,
                 author = quotesDto.author
@@ -32,6 +33,7 @@ class DatabaseQuotesDatabase @Inject constructor(
         Completable.fromCallable {
             database.quotesDao().insertQuotes(
                 QuotesDto(
+                    id = 1,
                     type = type,
                     description = description,
                     author = author

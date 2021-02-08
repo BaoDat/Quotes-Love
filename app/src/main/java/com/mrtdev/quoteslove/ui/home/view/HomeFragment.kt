@@ -2,7 +2,6 @@ package com.mrtdev.quoteslove.ui.home.view
 
 import android.os.Bundle
 import com.mrtdev.quoteslove.R
-import com.mrtdev.quoteslove.base.BaseActivity
 import com.mrtdev.quoteslove.base.BaseFragment
 import com.mrtdev.quoteslove.databinding.FragmentAllQuotesBinding
 import com.mrtdev.quoteslove.ui.allquotes.view.AllQuotesFragment
@@ -23,7 +22,6 @@ class HomeFragment : BaseFragment<FragmentAllQuotesBinding, HomeViewModel>() {
     }
 
     override fun initView(savedInstanceState: Bundle?) {
-        viewModel.saveScore()
     }
 
     override fun onResume() {

@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "quotes")
 data class QuotesDto (
-    @PrimaryKey(autoGenerate = true) val id: Long? = null,
+    @PrimaryKey(autoGenerate = true) val id: Long,
     @ColumnInfo(name = "type") val type: String,
     val description: String,
     val author: String

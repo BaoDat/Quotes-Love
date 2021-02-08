@@ -4,6 +4,7 @@ import com.mrtdev.quoteslove.QuotesLoveApplication
 import com.mrtdev.quoteslove.database.di.DatabaseModule
 import com.mrtdev.quoteslove.di.module.AppInjectorsModule
 import com.mrtdev.quoteslove.di.module.ViewModelsModule
+import com.mrtdev.quoteslove.storage.di.StorageModule
 import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
@@ -17,7 +18,8 @@ import javax.inject.Singleton
         ViewModelsModule::class,
         AndroidSupportInjectionModule::class,
         AppInjectorsModule::class,
-        DatabaseModule::class
+        DatabaseModule::class,
+        StorageModule::class
     ]
 )
 

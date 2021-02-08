@@ -19,20 +19,20 @@ class HomeViewModel @Inject constructor(
     val saveScoreSuccess = saveScoreSuccessSubject.hide()
     
     val isExecuting = MutableLiveData<Boolean>()
-    fun saveScore() {
-        compositeDisposable +=
-            add.execute(AddQuote.QuoteAdd(type = "Thơ", description = "Xin chào", author = "MrT"))
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .doOnSubscribe { isExecuting.value = true }
-                .doFinally { isExecuting.value = false }
-                .subscribe(Consumer {
-                    when (it) {
-                        is Result.Success -> saveScoreSuccessSubject.onNext(Unit)
-                        is Result.Error -> {
-                        }
-                    }
-                })
-
-    }
+//    fun saveScore() {
+//        compositeDisposable +=
+//            add.execute(AddQuote.QuoteAdd(type = "Thơ", description = "Xin chào", author = "MrT"))
+//                .subscribeOn(Schedulers.io())
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .doOnSubscribe { isExecuting.value = true }
+//                .doFinally { isExecuting.value = false }
+//                .subscribe(Consumer {
+//                    when (it) {
+//                        is Result.Success -> saveScoreSuccessSubject.onNext(Unit)
+//                        is Result.Error -> {
+//                        }
+//                    }
+//                })
+//
+//    }
 }

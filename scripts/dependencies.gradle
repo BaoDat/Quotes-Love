@@ -60,11 +60,17 @@ ext {
             // Google AdMob
             googleAd             : "com.google.android.gms:play-services-ads:19.1.0",
 
+            // Firebase
+            firebaseAnalytics    : "com.google.firebase:firebase-analytics-ktx:18.0.2",
+            firebaseConfig       : "com.google.firebase:firebase-config-ktx:20.0.3",
+
             //Snow Falling
             snowFalling          : 'com.github.IamStY:SnowFalling:v1.4',
 
             parceler             : "org.parceler:parceler:$parcelerVersion",
             parcelerApi          : "org.parceler:parceler-api:$parcelerVersion",
+
+            sqlite               : "androidx.sqlite:sqlite-ktx:2.1.0"
     ]
 
     appModuleDependencies = [
@@ -114,17 +120,23 @@ ext {
             [configuration: "androidTestImplementation", dependency: libs.espressoCore],
 
             [configuration: "implementation", dependency: libs.googleAd],
+            [configuration: "implementation", dependency: libs.firebaseAnalytics],
+            [configuration: "implementation", dependency: libs.firebaseConfig],
 
             [configuration: "implementation", dependency: libs.snowFalling],
 
             [configuration: "kapt", dependency: libs.parceler],
             [configuration: "implementation", dependency: libs.parcelerApi],
+
+            [configuration: "implementation", dependency: libs.sqlite],
     ]
 
     domainModuleDependencies = [
             [configuration: "implementation", dependency: libs.javaxInject],
             [configuration: "implementation", dependency: libs.rxJava],
             [configuration: "implementation", dependency: libs.kotlinStdLib],
+
+            [configuration: "implementation", dependency: libs.sqlite],
     ]
 
 }

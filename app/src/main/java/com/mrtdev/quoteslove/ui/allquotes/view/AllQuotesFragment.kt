@@ -24,13 +24,11 @@ class AllQuotesFragment : BaseFragment<FragmentAllQuotesBinding, AllQuotesViewMo
 
     override fun initView(savedInstanceState: Bundle?) {
         binding.rvQuotes.adapter =
-            context?.let {
-                QuotesAdapter(
-                    it,
-                    this@AllQuotesFragment,
-                    viewModel.quotes
-                )
-            }
+            QuotesAdapter(
+                this,
+                viewModel.quotes
+            )
+//        binding.rvQuotes.adapter?.notifyDataSetChanged()
     }
 
     override fun onResume() {

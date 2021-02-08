@@ -6,6 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.mrtdev.quoteslove.database.dao.QuotesDao
 import com.mrtdev.quoteslove.database.entity.QuotesDto
+import com.mrtdev.quoteslove.database.setup.OpenHelperFactory
 
 @Database(
     entities = [QuotesDto::class],
@@ -24,7 +25,8 @@ abstract class RomQuotesLoveDatabase : RoomDatabase() {
                 context,
                 RomQuotesLoveDatabase::class.java,
                 DATABASE_NAME
-            ).build()
+            ).openHelperFactory(OpenHelperFactory())
+                .build()
     }
 
     abstract fun quotesDao(): QuotesDao

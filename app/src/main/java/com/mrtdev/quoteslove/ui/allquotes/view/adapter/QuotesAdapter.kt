@@ -12,16 +12,15 @@ import com.mrtdev.quoteslove.databinding.ViewQuoteBinding
 
 
 class QuotesAdapter(
-    val context: Context,
     lifecycleOwner: LifecycleOwner,
     private val data: LiveData<List<Quote>>
 ) : RecyclerView.Adapter<QuotesAdapter.ReviewViewHolder>() {
 
     init {
+        setHasStableIds(true)
         data.observe(lifecycleOwner, Observer {
             notifyDataSetChanged()
         })
-        setHasStableIds(true)
     }
 
     class ReviewViewHolder(
@@ -32,16 +31,14 @@ class QuotesAdapter(
         val inflater = LayoutInflater.from(parent.context)
         val binding = ViewQuoteBinding.inflate(inflater, parent, false)
 
-        return ReviewViewHolder(
-            binding
-        )
+        return ReviewViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ReviewViewHolder, position: Int) {
         holder.binding.model = data.value?.getOrNull(position)
-
     }
 
-    override fun getItemCount(): Int = data.value.orEmpty().size
+    override fun getItemCount() = data.value?.size ?: 0
 
+    override fun getItemId(position: Int): Long = data.value?.getOrNull(position)!!.id
 }

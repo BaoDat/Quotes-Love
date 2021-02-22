@@ -25,6 +25,7 @@ class AllQuotesFragment : BaseFragment<FragmentAllQuotesBinding, AllQuotesViewMo
     override fun initView(savedInstanceState: Bundle?) {
         binding.rvQuotes.adapter =
             QuotesAdapter(
+                requireContext(),
                 this,
                 viewModel.quotes
             )

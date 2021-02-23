@@ -15,8 +15,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProviders
 import com.mrtdev.quoteslove.BR
 import com.mrtdev.quoteslove.R
-import com.mrtdev.quoteslove.base.exceptions.ConnectivityErrorSource
-import com.mrtdev.quoteslove.base.exceptions.QuotesLoveException
+import com.mrtdev.quoteslove.domain.base.exceptions.ConnectivityErrorSource
+import com.mrtdev.quoteslove.domain.base.exceptions.QuotesLoveException
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector

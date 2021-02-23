@@ -1,4 +1,4 @@
-package com.mrtdev.quoteslove.base.exceptions
+package com.mrtdev.quoteslove.domain.base.exceptions
 
 
 

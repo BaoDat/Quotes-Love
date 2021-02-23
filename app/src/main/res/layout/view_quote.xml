@@ -18,11 +18,11 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/view_quotes"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginHorizontal="16dp"
+            android:layout_height="230dp"
+            android:layout_marginHorizontal="@dimen/space_16_dp"
             app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="2dp"
+            app:cardCornerRadius="@dimen/space_20_dp"
+            app:cardElevation="@dimen/space_2_dp"
             app:cardUseCompatPadding="true">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -32,33 +32,33 @@
 
                 <ImageView
                     android:id="@+id/iv_copy"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_width="@dimen/space_25_dp"
+                    android:layout_height="@dimen/space_25_dp"
+                    android:layout_marginStart="@dimen/space_10_dp"
+                    android:layout_marginTop="@dimen/space_15_dp"
+                    android:contentDescription="@null"
                     android:src="@drawable/ic_copy"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:tint="@color/white"/>
+                    app:tint="@color/white" />
 
 
                 <ImageView
                     android:id="@+id/iv_content"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_width="@dimen/space_80_dp"
+                    android:layout_height="@dimen/space_80_dp"
+                    android:layout_marginTop="@dimen/space_10_dp"
                     android:contentDescription="@null"
-                    android:src="@drawable/heart"
                     app:layout_constraintLeft_toRightOf="@id/iv_copy"
                     app:layout_constraintRight_toLeftOf="@id/iv_like"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/iv_like"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="10dp"
+                    android:layout_width="@dimen/space_25_dp"
+                    android:layout_height="@dimen/space_25_dp"
+                    android:layout_marginTop="@dimen/space_15_dp"
+                    android:layout_marginEnd="@dimen/space_10_dp"
                     android:contentDescription="@null"
                     android:src="@drawable/ic_heart"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -69,16 +69,31 @@
                     android:id="@+id/tv_thinh"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10_dp"
                     android:gravity="center"
                     android:text="@{model.description}"
-                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_20_sp"
                     android:textStyle="bold"
                     app:fontFamily="@font/dancing_script_bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@id/iv_content"
                     app:layout_constraintStart_toStartOf="@id/iv_content"
                     app:layout_constraintTop_toBottomOf="@id/iv_content"
                     tools:text="Gửi thương gửi cả ngẩn ngơ trong lòng" />
+
+                <TextView
+                    android:id="@+id/tv_author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/space_10_dp"
+                    android:gravity="center"
+                    android:text="@{model.author}"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_10_sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/iv_content"
+                    app:layout_constraintStart_toStartOf="@id/iv_content"
+                    tools:text="- Dat Dang -" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>

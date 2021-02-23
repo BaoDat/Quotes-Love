@@ -1,6 +1,6 @@
 package com.mrtdev.quoteslove.domain.base
 
-import com.mrtdev.quoteslove.base.exceptions.QuotesLoveException
+import com.mrtdev.quoteslove.domain.base.exceptions.QuotesLoveException
 import io.reactivex.Single
 
 sealed class Result<out T> {

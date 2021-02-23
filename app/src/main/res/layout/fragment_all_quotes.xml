@@ -4,25 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="model"
             type="com.mrtdev.quoteslove.ui.allquotes.viewmodel.AllQuotesViewModel" />
     </data>
 
-    <LinearLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/filtersCoordinatorLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/toolbar" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_quotes"
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/filtersAppBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/filtersCollapsingLayout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layoutManager="@string/linear_layout_manager"
-                tools:listitem="@layout/view_quote" />
-    </LinearLayout>
+                android:layout_height="wrap_content"
+                android:minHeight="0dp"
+                app:layout_scrollFlags="snap"
+                app:titleEnabled="false">
+
+                <include
+                    android:id="@+id/toolbar"
+                    layout="@layout/toolbar" />
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_quotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layoutManager="@string/linear_layout_manager"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:listitem="@layout/view_quote" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 </layout>

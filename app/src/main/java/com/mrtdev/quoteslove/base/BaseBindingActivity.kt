@@ -6,8 +6,8 @@ import androidx.databinding.ViewDataBinding
 import com.mrtdev.quoteslove.BR
 import com.mrtdev.quoteslove.R
 import androidx.lifecycle.*
-import com.mrtdev.quoteslove.base.exceptions.ConnectivityErrorSource
-import com.mrtdev.quoteslove.base.exceptions.QuotesLoveException
+import com.mrtdev.quoteslove.domain.base.exceptions.ConnectivityErrorSource
+import com.mrtdev.quoteslove.domain.base.exceptions.QuotesLoveException
 import com.mrtdev.quoteslove.utils.plusAssign
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers

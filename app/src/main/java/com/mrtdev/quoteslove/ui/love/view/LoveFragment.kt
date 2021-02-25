@@ -23,11 +23,16 @@ class LoveFragment : BaseFragment<FragmentLoveBinding, LoveViewModel>() {
     }
 
     override fun initView(savedInstanceState: Bundle?) {
-        setupViewPager()
+//        setupViewPager()
     }
 
-    private fun setupViewPager() {
-        binding.vpLike.adapter = LovePagerAdapter(requireContext(), childFragmentManager)
-        binding.vpLike.currentItem = LovePagerAdapter.LIKE_POSITION
+//    private fun setupViewPager() {
+//        binding.vpLike.adapter = LovePagerAdapter(requireContext(), childFragmentManager)
+//        binding.vpLike.currentItem = LovePagerAdapter.LIKE_POSITION
+//    }
+
+    override fun onResume() {
+        super.onResume()
+        setupToolBar(R.string.action_tile_love)
     }
 }

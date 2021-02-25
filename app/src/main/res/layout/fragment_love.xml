@@ -14,28 +14,28 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
-<!--        <include-->
-<!--            android:id="@+id/toolbar"-->
-<!--            layout="@layout/toolbar" />-->
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/vp_like"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            >
+<!--        <androidx.viewpager.widget.ViewPager-->
+<!--            android:id="@+id/vp_like"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
+<!--            >-->
 
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tab_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:tabGravity="fill"
-                app:tabBackground="@color/app_color_pink"
-                app:tabIndicatorColor="@color/white"
-                app:tabMode="fixed"
-                app:tabSelectedTextColor="@color/white"
-                app:tabTextColor="@color/background"
-                />
-        </androidx.viewpager.widget.ViewPager>
+<!--            <com.google.android.material.tabs.TabLayout-->
+<!--                android:id="@+id/tab_layout"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:tabGravity="fill"-->
+<!--                app:tabBackground="@color/app_color_pink"-->
+<!--                app:tabIndicatorColor="@color/white"-->
+<!--                app:tabMode="fixed"-->
+<!--                app:tabSelectedTextColor="@color/white"-->
+<!--                app:tabTextColor="@color/background"-->
+<!--                />-->
+<!--        </androidx.viewpager.widget.ViewPager>-->
     </LinearLayout>
 </layout>

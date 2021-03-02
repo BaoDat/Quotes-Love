@@ -20,7 +20,8 @@ class QuotesAdapter(
     private val context: Context,
     lifecycleOwner: LifecycleOwner,
     private val data: LiveData<List<Quote>>,
-    private val onDataChanged: (Boolean) -> Unit
+    private val onDataChanged: (Boolean) -> Unit,
+    private val onLikeItemSelected: (Quote) -> Unit
 ) : RecyclerView.Adapter<QuotesAdapter.ReviewViewHolder>() {
 
     private val listImages = QuotesAvatar.values().toList()
@@ -48,13 +49,18 @@ class QuotesAdapter(
 
     override fun onBindViewHolder(holder: ReviewViewHolder, position: Int) {
         holder.binding.model = data.value?.getOrNull(position)
-
-        holder.binding.ivContent.setImageResource(getImages())
+        val image = getImages()
+        holder.binding.ivContent.setImageResource(image)
 
         holder.binding.ivCopy.setOnClickListener {
             val clipboardManager = context.getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
             val clipData = ClipData.newPlainText("text", holder.binding.tvThinh.text)
             clipboardManager.setPrimaryClip(clipData)
+        }
+
+        holder.binding.ivLike.setOnClickListener {
+            data.value?.get(position)?.image = image
+            onLikeItemSelected(data.value?.getOrNull(position)!!)
         }
 
     }

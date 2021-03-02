@@ -24,7 +24,8 @@ class DatabaseQuotesDatabase @Inject constructor(
                 id = quotesDto.id,
                 type = quotesDto.type,
                 description = quotesDto.description,
-                author = quotesDto.author
+                author = quotesDto.author,
+                image = null
             )
         }
     }

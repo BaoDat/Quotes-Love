@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.mrtdev.quoteslove.database.models.Quote" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/space_20_dp"
+        android:paddingBottom="@dimen/space_25_dp">
+
+        <ImageView
+            android:id="@+id/iv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@null"
+            android:src="@drawable/envelope_love"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_quote"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/space_15_dp"
+            android:text="₹435.00"
+            android:textSize="@dimen/text_size_16_sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/iv_content"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_author"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/space_15_dp"
+            android:layout_marginTop="@dimen/space_10_dp"
+            android:text="₹435.00"
+            android:textSize="@dimen/text_size_16_sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/iv_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_quote" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#ededed"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_content" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineAdditionalInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="72dp" />
+
+        <ImageView
+            android:id="@+id/iv_like"
+            android:layout_width="@dimen/space_25_dp"
+            android:layout_height="@dimen/space_25_dp"
+            android:layout_marginStart="@dimen/space_20_dp"
+            android:layout_marginTop="@dimen/space_10_dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_heart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider" />
+
+        <TextView
+            android:id="@+id/tv_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thêm vào yêu thích"
+            app:layout_constraintStart_toEndOf="@id/guidelineAdditionalInfo"
+            app:layout_constraintTop_toTopOf="@id/iv_like" />
+
+        <ImageView
+            android:id="@+id/iv_add_list"
+            android:layout_width="@dimen/space_25_dp"
+            android:layout_height="@dimen/space_25_dp"
+            android:layout_marginStart="@dimen/space_20_dp"
+            android:layout_marginTop="@dimen/space_15_dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_profile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_like" />
+
+        <TextView
+            android:id="@+id/tv_add_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thêm vào yêu thích"
+            app:layout_constraintStart_toEndOf="@id/guidelineAdditionalInfo"
+            app:layout_constraintTop_toTopOf="@id/iv_add_list" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

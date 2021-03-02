@@ -4,10 +4,14 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.appbar.AppBarLayout
 import com.mrtdev.quoteslove.R
+import com.mrtdev.quoteslove.base.BaseActivity
 import com.mrtdev.quoteslove.base.BaseFragment
+import com.mrtdev.quoteslove.common.dialog.BottomSheetFragment
+import com.mrtdev.quoteslove.database.models.Quote
 import com.mrtdev.quoteslove.databinding.FragmentAllQuotesBinding
 import com.mrtdev.quoteslove.ui.allquotes.view.adapter.QuotesAdapter
 import com.mrtdev.quoteslove.ui.allquotes.viewmodel.AllQuotesViewModel
+
 
 class AllQuotesFragment : BaseFragment<FragmentAllQuotesBinding, AllQuotesViewModel>() {
 
@@ -29,10 +33,10 @@ class AllQuotesFragment : BaseFragment<FragmentAllQuotesBinding, AllQuotesViewMo
             QuotesAdapter(
                 requireContext(),
                 this@AllQuotesFragment,
-                viewModel.quotes
-            ){
-                updatedFiltersCollapsingCoordinator(it)
-            }
+                viewModel.quotes,
+                this::updatedFiltersCollapsingCoordinator,
+                this::showBottomSheet
+            )
     }
 
     override fun onResume() {
@@ -52,6 +56,26 @@ class AllQuotesFragment : BaseFragment<FragmentAllQuotesBinding, AllQuotesViewMo
                 params.scrollFlags = AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL or AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS
             }
             binding.filtersCollapsingLayout.layoutParams = params
+        }
+    }
+
+    private fun showBottomSheet(quote: Quote) {
+//        val view: View = layoutInflater.inflate(R.layout.bottom_sheet, null)
+//
+//        val dialog = context?.let { BottomSheetDialog(it) }
+//        dialog!!.setContentView(view)
+//        dialog.show()
+        (context as? BaseActivity)?.apply {
+            val fragment = BottomSheetFragment.newInstance(quote)
+//            supportFragmentManager.beginTransaction()
+//                .replace(R.id.container, fragment)
+//                .addToBackStack(BottomSheetFragment::class.java.simpleName)
+//                .commitAllowingStateLoss()
+            supportFragmentManager.let {
+                BottomSheetFragment.newInstance(quote).apply {
+                    show(it, tag)
+                }
+            }
         }
     }
 }

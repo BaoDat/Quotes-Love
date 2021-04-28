@@ -9,6 +9,7 @@ ext {
     def projectModules = [
             app   : project("app"),
             domain: project("domain"),
+            data: project("data"),
     ]
 
     def libs = [
@@ -132,6 +133,15 @@ ext {
     ]
 
     domainModuleDependencies = [
+            [configuration: "implementation", dependency: libs.javaxInject],
+            [configuration: "implementation", dependency: libs.rxJava],
+            [configuration: "implementation", dependency: libs.kotlinStdLib],
+
+            [configuration: "implementation", dependency: libs.sqlite],
+    ]
+
+    dataModuleDependencies = [
+            [configuration: "implementation", dependency: libs.kotlinExt],
             [configuration: "implementation", dependency: libs.javaxInject],
             [configuration: "implementation", dependency: libs.rxJava],
             [configuration: "implementation", dependency: libs.kotlinStdLib],

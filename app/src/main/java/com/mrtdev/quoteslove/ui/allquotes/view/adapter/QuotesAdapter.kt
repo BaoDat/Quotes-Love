@@ -6,10 +6,12 @@ import android.content.Context
 import android.content.Context.CLIPBOARD_SERVICE
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
+import com.mrtdev.quoteslove.R
 import com.mrtdev.quoteslove.base.extensions.drawableRes
 import com.mrtdev.quoteslove.database.models.Quote
 import com.mrtdev.quoteslove.databinding.ViewQuoteBinding
@@ -55,6 +57,7 @@ class QuotesAdapter(
         holder.binding.ivCopy.setOnClickListener {
             val clipboardManager = context.getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
             val clipData = ClipData.newPlainText("text", holder.binding.tvThinh.text)
+            Toast.makeText(context, R.string.description_copy_quote, Toast.LENGTH_LONG).show()
             clipboardManager.setPrimaryClip(clipData)
         }
 

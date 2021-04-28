@@ -1,0 +1,7 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+
+rootProject.ext.configureDependencies(project)
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
